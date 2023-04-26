@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* I like cycling through colors! */
+:root {
+    --zero: #cfefaf;
+    --one: #b5dce8;
+    --two: #ffc8b2;
+    --three: #ffe766;
+    --four: #e16f7c;
+    --five: #a2a4e2;
+    --link: #ff9800;
+}
+
+body {
+    /* Just barelyyy not white */
+    background-color: #fff8f7;
+    /* Define font families */
+    font-family: "Source Code Pro", monospace;
+    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Serif Pro", serif;
+    /* Centered horizontally */
+    margin: 0 auto;
+}
+
+body {
+    @apply w-5/6 py-8;
+}
+
+@screen md {
+    body {
+        @apply w-1/2;
+    }
+}
+
+@screen xl {
+    body {
+        @apply w-1/3;
+    }
+}
+
+p {
+    @apply tracking-tight leading-relaxed mb-4;
+}
+
+h1 {
+    @apply text-5xl font-extrabold;
+}
+
+h2 {
+    @apply text-4xl font-bold;
+}
+
+h3 {
+    @apply text-3xl font-bold;
+}
+
+h4 {
+    @apply text-2xl font-bold;
+}
+
+h5 {
+    @apply text-xl font-bold;
+}
+
+h6 {
+    @apply text-lg font-bold;
+}
+
+/* Style descendents of Jupyter code cells */
+.code_cell * {
+    @apply text-xs;
+}
+
+/* Fun hyperlink hover effect from:
+ * https://css-tricks.com/having-fun-with-link-hover-effects/
+ * jQuery cycles through these, but I assign <a> here just in-case loading
+ * takes a while.
+ */
+a,
+.link-zero {
+    background: linear-gradient(to bottom, var(--zero) 0%, var(--zero) 100%);
+}
+
+.link-one {
+    background: linear-gradient(to bottom, var(--one) 0%, var(--one) 100%);
+}
+
+.link-two {
+    background: linear-gradient(to bottom, var(--two) 0%, var(--two) 100%);
+}
+
+.link-three {
+    background: linear-gradient(to bottom, var(--three) 0%, var(--three) 100%);
+}
+
+.link-four {
+    background: linear-gradient(to bottom, var(--four) 0%, var(--four) 100%);
+}
+
+.link-five {
+    background: linear-gradient(to bottom, var(--five) 0%, var(--five) 100%);
+}
+
+a,
+.link-zero,
+.link-one,
+.link-two,
+.link-three,
+.link-four,
+.link-five {
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 2px;
+    color: #000;
+    text-decoration: none;
+    transition: background-size 0.6s;
+    @apply px-1;
+}
+
+a:hover {
+    background-size: 4px 50px;
+}
+
+blockquote {
+    @apply p-4 my-4 border-l-4 border-gray-300;
+}
+
+blockquote p {
+    @apply leading-relaxed text-gray-900 mb-0;
+}
+
+ol,
+ul {
+    @apply list-outside pl-4;
+}
+
+p + ul,
+p + ol {
+    /* Apply a negative upper margin to lists that follow a paragraph */
+    @apply -mt-4;
+}
+
+ul {
+    @apply list-disc;
+}
+
+ol {
+    @apply list-decimal;
+}

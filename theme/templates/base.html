@@ -1,0 +1,70 @@
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+    <title>
+        {% block title %}{# Default title #}hey hey{% endblock title %}
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        const numColors = 6;
+        const wordsNums = ["zero", "one", "two", "three", "four", "five"];
+
+        const aColors = (ancestor = "") => {
+            let counter = Math.floor(Math.random() * numColors);
+            $(`${ancestor} a`).each((i, elem) => {
+                // Remove any "link-" classes so we don't end up at "link-five" which
+                // takes precedence over the rest
+                const classes = $(elem).attr("class");
+                if (classes) {
+                    $(elem).removeClass(
+                        classes
+                            .split(" ")
+                            .filter((c) => c.indexOf("link-") >= 0),
+                    );
+                }
+
+                $(elem).addClass("link-" + wordsNums[counter % numColors]);
+                counter += 1;
+            });
+        };
+
+        const blockquoteColors = (ancestor = "") => {
+            let counter = Math.floor(Math.random() * numColors);
+            $(`${ancestor} blockquote`).each((i, elem) => {
+                elem.style["border-color"] = `var(--${wordsNums[counter % numColors]
+                    })`;
+                counter += 1;
+            });
+        };
+
+        $(document).ready(() => {
+            const ancestor = "";
+            aColors(ancestor);
+            blockquoteColors(ancestor);
+        });
+    </script>
+
+    <!-- Load MathJax: https://docs.mathjax.org/en/latest/basic/mathematics.html -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <!-- Load fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Load CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/out.css" />
+</head>
+
+<body>
+    <main>{% block content %}{% endblock %}</main>
+</body>
+
+</html>
