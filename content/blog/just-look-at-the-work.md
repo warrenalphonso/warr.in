@@ -1,5 +1,5 @@
-Title: Just look at the work
-Date: 22-03-2023
+Title: Just Look at the Work
+Date: 2023-03-22
 
 > Pat, I understand where your estimates are coming from, and I’m sure that your
 > advice is truly meant to be helpful to me. But I also see that advice as an

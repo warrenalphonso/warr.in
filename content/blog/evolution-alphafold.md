@@ -1,5 +1,5 @@
-Title: Hints From AlphaFold
-Date: 08-05-2023
+Title: Hints from AlphaFold
+Date: 2023-05-08
 
 It's surprising to me that protein folding fell to AlphaFold -- a transformer-based
 architecture. There's no _very deep_ thinking going on here, like there seems to
