@@ -1,5 +1,5 @@
-Title: Biology is easier
-Date: 23-03-2023
+Title: Biology is Easier
+Date: 2023-03-23
 
 Thinking a bit about AI research vs aging research (not that I have to choose one
 or the other!) but it's interesting that biology research with AI helping us feels
