@@ -4,15 +4,16 @@
 {% block content %}
 <div>
     <article>
-        <h1>Rare News by Noah Lops</h1>
+        <h2>Rare News by Noah Lops</h2>
 
         <ul>
             {% for article in articles %}
             <li>
                 <a href="{{ SITEURL }}/{{ article.url }}"">
-                    <h2>{{ article.title }}</h2>
-                    <span>{{ article.date.strftime('%d.%m.%Y') }}</span>
+                    <span>{{ article.title }}</span>
                 </a>
+                <br />
+                <span>{{ article.date.strftime('%d.%m.%Y') }}</span>
             </li>
             {% endfor %}
         </ul>
