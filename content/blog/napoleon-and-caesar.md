@@ -7,6 +7,9 @@ on the Enlightenment. The walls of the room are lined with bookshelves from
 
 ![Two books by Napoleon]({static}/images/napoleon-two.jpg)
 
+(Ah whoops, these are by Napoleon III not Napoleon I. Wikipedia says Napoleon I did
+actually write a book on Caesar while in exile.)
+
 I had previously read that Napoleon held Caesar in high regard, and that when
 someone compared him to Caesar he broke down and felt his life had come full circle.
 
