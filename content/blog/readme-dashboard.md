@@ -1,5 +1,6 @@
 Title: Dashboards in READMEs
 Date: 2023-05-23
+Modified: 2023-06-24
 
 I take a lot of text-based notes, and I've got a script that commits changes to
 these notes every hour to a private GitHub repo. I find the Git-tracked "lines
