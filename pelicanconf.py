@@ -1,14 +1,24 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
-from pelican_jupyter import liquid as notebook_liquid
 
 # Basic settings
 PAGE_PATHS = ["pages"]
 ARTICLE_PATHS = ["blog"]
 PATH = "content"
-PLUGINS = [notebook_liquid]
+PLUGINS = []
 SITENAME = "warr.in"
 SITEURL = ""
-STATIC_PATHS = ["favicon.ico", "images"]
+STATIC_PATHS = ["favicon.ico", "pygment-lovelace.css", "images"]
+MARKDOWN = {
+    "extensions": [
+        # Syntax highlighting
+        "markdown.extensions.codehilite",
+        "markdown.extensions.extra",
+        "markdown.extensions.meta",
+    ],
+    "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+    },
+}
 
 # URL settings
 ARTICLE_URL = "blog/{path_no_ext}/"

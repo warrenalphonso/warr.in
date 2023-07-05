@@ -1,4 +1,3 @@
-git+https://github.com/danielfrg/pelican-jupyter@49c1d3b
 invoke
 livereload
 pelican[markdown] == 4.*
