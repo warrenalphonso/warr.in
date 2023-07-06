@@ -1,7 +1,7 @@
 Title: Unix Philosophy and Effectiveness
 Date: 2023-07-05
 
-https://the-dam.org/docs/explanations/suc.html
+Some thoughts on [`suc`](https://the-dam.org/docs/explanations/suc.html).
 
 The most important features of Slack for me were editing messages and threads —
 can you think of a nice way to implement those here?
