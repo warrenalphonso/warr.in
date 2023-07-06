@@ -50,3 +50,18 @@ PostCSS is some way of combining JS and CSS. I've got this input file called
 CLI command to convert the PostCSS input file to a CSS output file, Tailwind will
 only add styles that our HTML _is actually using_ to the output file. This keeps
 our output file very small!
+
+## Idea Graveyard
+
+### Embed Jupyter Notebooks
+
+It'd be neat to use a plugin to embed Jupyter Notebooks in blog posts. The main
+problem is that making the Notebook CSS play well with our site CSS wasn't straightforward,
+and [while I could use some hacks](https://github.com/danielfrg/pelican-jupyter/blob/1e52ce679a4922cc4307f8b6e7e9da8104db27f5/core.py#L118-L119)
+I didn't want to depend on a static `nbconvert` version ([`nbconvert` chooses
+the CSS version](https://cdn.jupyter.org/notebook/5.4.0/style/style.min.css)).
+I can revisit this if there's more documentation and stability around Jupyter
+Notebook CSS classes.
+
+Alternatively, I could convert to Markdown and then style the input/output cells
+myself. I didn't want do that.
