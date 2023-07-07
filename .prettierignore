@@ -1,2 +1,4 @@
-# Ignore all HTML files:
+# Ugly HTML formatting
 *.html
+# Prettier swaps \_ with \* which messes up MathJax
+*.md

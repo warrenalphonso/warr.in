@@ -26,11 +26,11 @@ where $G_{\alpha_1 \alpha_2}^{(0)}$ is a new variable for this inner product bet
 samples.
 
 For later layers,
-$$ E[z_{i_1; \alpha_1}^{(l+1)} z_{i_2; \alpha_2}^{(l+1)}] = \delta*{i_1 i_2} C_W \frac{1}{n_l} \sum*{j=1}^{n*l} E[z*{j; \alpha*1}^{(l)} z*{j; \alpha*2}^{(l)}] = \delta*{i*1 i_2} C_W G*{\alpha*1 \alpha_2}^{(l)}$$
-where we introduce a generalized $G*{\alpha*1 \alpha_2}^{(l)}$. Notice that since
+$$ E[z_{i_1; \alpha_1}^{(l+1)} z_{i_2; \alpha_2}^{(l+1)}] = \delta_{i_1 i_2} C_W \frac{1}{n_l} \sum_{j=1}^{n_l} E[z_{j; \alpha_1}^{(l)} z_{j; \alpha_2}^{(l)}] = \delta_{i_1 i_2} C_W G_{\alpha_1 \alpha_2}^{(l)}$$
+where we introduce a generalized $G_{\alpha_1 \alpha_2}^{(l)}$. Notice that since
 $G$ is inner product of two inputs divided by number, it's basically expectation
 with $i_1 = i_2$. Thus,
-$$G*{\alpha*1 \alpha_2}^{(l+1)} = \frac{1}{n*{l+1}} \sum*{j=1}^{n*{l+1}} E[z_{j; \alpha_1}^{(l+1)} z_{j; \alpha_2}^{(l+1)}] = \frac{1}{n*{l+1}} \sum^{n*{l+1}} C*W G*{\alpha*1 \alpha_2}^{(l)} = C_W G^{(l)}*{\alpha_1 \alpha_2}$$
+$$G_{\alpha_1 \alpha_2}^{(l+1)} = \frac{1}{n_{l+1}} \sum_{j=1}^{n_{l+1}} E[z_{j; \alpha_1}^{(l+1)} z_{j; \alpha_2}^{(l+1)}] = \frac{1}{n_{l+1}} \sum^{n_{l+1}} C_W G_{\alpha_1 \alpha_2}^{(l)} = C_W G^{(l)}_{\alpha_1 \alpha_2}$$
 
 And so we find that **the covariance matrix for layer $l$ is:**
 
