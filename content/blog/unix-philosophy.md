@@ -1,5 +1,6 @@
 Title: Unix Philosophy and Effectiveness
 Date: 2023-07-05
+Modified: 2023-07-06
 
 Some thoughts on [`suc`](https://the-dam.org/docs/explanations/suc.html).
 
