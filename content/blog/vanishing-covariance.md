@@ -21,7 +21,7 @@ Consider a fully-connected network:
 Let's consider the covariances between activations in the same layer. For the first
 layer,
 
-$$\begin{aligned}E[z_{i_1; \alpha_1}^{(1)} z_{i_2 \alpha_2}^{(1)}] &= \sum_{j_1, j_2=1}^{n_0} E[ W_{i_1 j_1}^{(1)} x_{j_1; \alpha_1} W_{i_2 j_2}^{(1)} x_{j_2 ; \alpha_2} ] = \sum E[W_{i_1 j_1}^{(1)} W_{i_2 j_2}^{(1)}] x_{j_1; \alpha_1} x_{j_2 ; \alpha_2}\\\\ &= \sum_{j_0, j_1=1}^{n_0} \frac{C_W}{n_0} \delta_{i_1 i_2} \delta_{j_1 j_2} x_{j_1; \alpha_1} x_{j_2; \alpha_2} \\\\ &= \delta_{i_1 i_2} \frac{C_W}{n_0} \sum_{j=1}^{n_0} x_{j; \alpha_1} x_{j; \alpha_2} \\\\ &= \delta_{i_1 i_2} C_W G_{\alpha_1 \alpha_2}^{(0)} \end{aligned}$$
+$$\begin{aligned}E[z_{i_1; \alpha_1}^{(1)} z_{i_2 \alpha_2}^{(1)}] &= \sum_{j_1, j_2=1}^{n_0} E[ W_{i_1 j_1}^{(1)} x_{j_1; \alpha_1} W_{i_2 j_2}^{(1)} x_{j_2 ; \alpha_2} ] = \sum E[W_{i_1 j_1}^{(1)} W_{i_2 j_2}^{(1)}] x_{j_1; \alpha_1} x_{j_2 ; \alpha_2}\\ &= \sum_{j_0, j_1=1}^{n_0} \frac{C_W}{n_0} \delta_{i_1 i_2} \delta_{j_1 j_2} x_{j_1; \alpha_1} x_{j_2; \alpha_2} \\ &= \delta_{i_1 i_2} \frac{C_W}{n_0} \sum_{j=1}^{n_0} x_{j; \alpha_1} x_{j; \alpha_2} \\ &= \delta_{i_1 i_2} C_W G_{\alpha_1 \alpha_2}^{(0)} \end{aligned}$$
 where $G_{\alpha_1 \alpha_2}^{(0)}$ is a new variable for this inner product between
 samples.
 

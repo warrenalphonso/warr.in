@@ -14,6 +14,7 @@ MARKDOWN = {
         "markdown.extensions.codehilite",
         "markdown.extensions.extra",
         "markdown.extensions.meta",
+        "markdown_math",
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
