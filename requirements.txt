@@ -18,8 +18,8 @@ livereload==2.6.3
     # via -r requirements.in
 markdown==3.4.3
     # via
+    #   -r requirements.in
     #   pelican
-    #   python-markdown-math
 markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.3
@@ -34,8 +34,6 @@ pygments==2.15.1
     #   rich
 python-dateutil==2.8.2
     # via pelican
-python-markdown-math @ git+https://github.com/warrenalphonso/python-markdown-math
-    # via -r requirements.in
 pytz==2023.3
     # via
     #   feedgenerator

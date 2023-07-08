@@ -1,4 +1,5 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
+from markdown_extensions import MathExtension
 
 # Basic settings
 PAGE_PATHS = ["pages"]
@@ -10,11 +11,15 @@ SITEURL = ""
 STATIC_PATHS = ["favicon.ico", "pygment-lovelace.css", "images"]
 MARKDOWN = {
     "extensions": [
-        # Syntax highlighting
-        "markdown.extensions.codehilite",
+        "markdown.extensions.codehilite",  # Syntax highlighting
         "markdown.extensions.extra",
         "markdown.extensions.meta",
-        "markdown_math",
+        MathExtension(
+            regexes=[
+                r"(?<!\\|\$)\$.+?\$",  # $...$
+                r"(?<!\\)\$\$.+?\$\$",  # $$ ... $$
+            ]
+        ),
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
