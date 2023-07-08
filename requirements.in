@@ -1,4 +1,4 @@
-git+https://github.com/warrenalphonso/python-markdown-math
 invoke
 livereload
+markdown
 pelican[markdown] == 4.*
