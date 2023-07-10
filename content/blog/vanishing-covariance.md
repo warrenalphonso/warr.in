@@ -1,7 +1,7 @@
 Title: What’s So Bad About a Vanishing Covariance?
 Date: 2023-07-06
 
-# Context
+## Context
 
 Consider a fully-connected network:
 
@@ -43,14 +43,14 @@ And so we find that **the covariance matrix for layer $l$ is:**
 [_Principles of Deep Learning Theory_](https://deeplearningtheory.com/). Fantastic
 book so far, by the way.)
 
-# Interpretations
+## Interpretations
 
 Glorot and He initialization are derived by keeping the covariance stable, but I
 think the motivation there is to make gradients behave nicely.
 Here I just want to consider the forward-pass of a randomly initialized network.
 Is there any reason we'd want the covariances to not explode or vanish?
 
-## What Even Is Covariance?
+### What Even Is Covariance?
 
 Positive covariance means if one variable deviates from its mean, the other one
 linearly deviates from its mean in the same direction. Negative means there's an
@@ -71,7 +71,7 @@ on an average instantiation, if $X$ is above its average $Y$ is infinitely above
 its average. That seems bad. Consider the preactivations in the output layer;
 they're hugely different in each instantiation.
 
-## This $G_{\alpha_1 \alpha_2}^{(0)}$ Thing Should Probably Be Meaningful
+### This $G_{\alpha_1 \alpha_2}^{(0)}$ Thing Should Probably Be Meaningful
 
 If we set $C_W=1$, then $G_{\alpha_1 \alpha_2}^{(l)} = G_{\alpha_1 \alpha_2}^{(0)}$.
 
