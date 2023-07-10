@@ -17,7 +17,7 @@ or the afterlife to weasel out of the implications of the given argument. But
 given how I (and I think most people) imagine souls working, it's hard to go back
 to honestly _expecting_ an afterlife to exist.
 
-# What's a soul?
+## What's a soul?
 
 The core assumption we'll make is that the soul is what _thinks_. I've got an
 internal monologue yapping for most of the day so that's the idea that comes to
@@ -41,7 +41,7 @@ Ultimately, if there is to be a continuous experience of consciousness, if the
 same _you_ that lives now will experience the afterlife, then an immortal soul
 _must_ be the source of your thoughts.
 
-# Thought experiment
+## Thought experiment
 
 Suppose I hand you a box. It's pretty heavy, and when you talk to it, you're
 surprised to find out that it talks back! What's more, it seems to be able to
@@ -62,7 +62,7 @@ How would you expect the box works? At a basic level, do you think there's a
 microphone inside the box and someone is relaying answers from outside the box?
 Or do you think the structure that's _doing the thinking_ is inside the box?
 
-# Conclusion
+## Conclusion
 
 It seems very likely that the thing doing the thinking must be inside the box,
 because the types of changes to the box's responses are changes to the way _it thinks_.

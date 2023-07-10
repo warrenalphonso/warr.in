@@ -19,7 +19,7 @@ parts of the world are is hard but important when deciding what to work on. But 
 _don't need to pay attention to this hard-to-read signal; I can just look at what
 people have tried!_
 
-#### Keeping up with current research
+## Keeping up with current research
 
 There are lots of papers published everyday. What does keeping up with this look
 like? Here are some ideas:
@@ -34,7 +34,7 @@ The amount of reading that seems required is just really high. Reading fast isn'
 my comparative advantage; can I avoid reading a lot? There are two things I could
 do here.
 
-##### Reduce number of papers I read
+### Reduce number of papers I read
 
 This means I need some way to filter papers. What properties should this filter
 have?
@@ -45,7 +45,7 @@ have?
 
 I could also use tools like Elicit and Google Scholar to decide what to read.
 
-##### Reduce amount of time per paper
+### Reduce amount of time per paper
 
 Some ideas:
 
@@ -60,13 +60,13 @@ Some ideas:
     -   I need to understand these two things in more depth then. That doesn't seem
         too hard.
 
-#### Switching between breadth and depth
+## Switching between breadth and depth
 
 I shouldn't commit to just one of these as my "learning style". Depth-first is nice
 when doing a project, but it's a terrible idea when mapping out a field. This might
 not be a high-order bit though.
 
-#### Making lots of beliefs that pay rent
+## Making lots of beliefs that pay rent
 
 A superpower here is understanding the epistemic state of the field:
 
