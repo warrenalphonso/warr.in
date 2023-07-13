@@ -1,6 +1,7 @@
 # warr.in
 
-Static site built with [Pelican](https://getpelican.com/).
+Most of the personal [static content](https://en.wikipedia.org/wiki/Static_web_page)
+I want to put on the Internet. Built with [Pelican](https://getpelican.com/).
 
 ## Development
 
