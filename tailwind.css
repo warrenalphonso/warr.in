@@ -158,3 +158,9 @@ ul {
 ol {
     @apply list-decimal;
 }
+
+pre {
+    /* Added to make code blocks horizontally scrollable, but I think it's fine
+       for any pre-formatted text to also scroll. */
+    @apply overflow-x-auto;
+}
