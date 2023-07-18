@@ -1,5 +1,5 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
-from markdown_extensions import MathExtension
+from markdown_extensions import MathJaxExtension
 
 # Basic settings
 PAGE_PATHS = ["pages"]
@@ -14,12 +14,7 @@ MARKDOWN = {
         "markdown.extensions.codehilite",  # Syntax highlighting
         "markdown.extensions.extra",
         "markdown.extensions.meta",
-        MathExtension(
-            regexes=[
-                r"(?<!\\|\$)\$.+?\$",  # $...$
-                r"(?<!\\)\$\$.+?\$\$",  # $$ ... $$
-            ]
-        ),
+        MathJaxExtension(),
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},

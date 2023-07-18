@@ -10,18 +10,42 @@ class SkipInlinePattern(InlineProcessor):
         return m.group(0), m.start(0), m.end(0)
 
 
-class MathExtension(Extension):
-    def __init__(self, regexes: list[str], **kwargs) -> None:
-        super().__init__(**kwargs)
-        self.regexes = regexes
-        if not isinstance(regexes, list):
-            raise ValueError(
-                f"Argument 'regexes' should be a list, but instead got {regexes}"
-            )
+class ReplaceInlineMathDelimiters(InlineProcessor):
+    """Extract math expression and replace delimiters with `\(...\)`."""
+
+    def handleMatch(self, m, _data):
+        return f"\({m.group(1)}\)", m.start(0), m.end(0)
+
+
+class MathJaxExtension(Extension):
+    """
+    Extension to avoid parsing text within math block as MarkDown.
+
+    This converts inline math blocks delimiters `$...$` to `\(...\)` because
+    dollar signs are pretty commonly used elsewhere.
+    """
+
+    """
+    Inline math should:
+    - be enclosed by `$...$`
+    - first or last character in expression shouldn't be whitespace `$ ...$` or
+      `$... $`: use negative lookahead and lookbehind
+    - avoid matching `\$`
+    - avoid matching `$$`
+    - avoid matchign empty math expression
+
+    Block math should:
+    - be enclosed by `$$ ... $$`
+    - be allowed to span multiple lines, lazily: `.+?` with `re.DOTALL`
+    - avoid matching `\$`
+    """
+    INLINE_RE = r"(?<!\\|\$)\$(?!\s)([^$\n]+?)(?<!\s)\$(?!\$)"  # $...$
+    BLOCK_RE = r"(?<!\\)\$\$.+?\$\$"  # $$ ... $$
 
     def extendMarkdown(self, md):
-        md.registerExtension(self)
-        for i, pattern in enumerate(self.regexes):
-            # We choose a priority just above 'escape':
-            # https://github.com/Python-Markdown/markdown/blob/master/markdown/inlinepatterns.py
-            md.inlinePatterns.register(SkipInlinePattern(pattern), f"math-{i}", 185)
+        # We choose a priority just above 'escape':
+        # https://github.com/Python-Markdown/markdown/blob/master/markdown/inlinepatterns.py
+        md.inlinePatterns.register(
+            ReplaceInlineMathDelimiters(self.INLINE_RE), f"math-inline", 185
+        )
+        md.inlinePatterns.register(SkipInlinePattern(self.BLOCK_RE), f"math-block", 185)
