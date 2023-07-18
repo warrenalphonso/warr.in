@@ -1,11 +1,12 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
-from markdown_extensions import ColorizeExtension, MathJaxExtension
+from markdown_extensions import MathJaxExtension
 
 # Basic settings
 PAGE_PATHS = ["pages"]
 ARTICLE_PATHS = ["blog"]
 PATH = "content"
-PLUGINS = []
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["colorize"]
 SITENAME = "warr.in"
 SITEURL = ""
 STATIC_PATHS = ["favicon.ico", "pygment-lovelace.css", "images"]
@@ -15,7 +16,6 @@ MARKDOWN = {
         "markdown.extensions.extra",
         "markdown.extensions.meta",
         MathJaxExtension(),
-        ColorizeExtension(),
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
