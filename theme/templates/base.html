@@ -8,50 +8,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        // Color links and blockquotes!
-        // I could do this at build time with Pelican (listen for the `content_written`
-        // signal and then update all <a> and <blockquote> elements), but I kind
-        // of like the whimsy of refreshing the page and changing all the colors.
-        const numColors = 6;
-        const wordsNums = ["zero", "one", "two", "three", "four", "five"];
-
-        const aColors = (ancestor = "") => {
-            let counter = Math.floor(Math.random() * numColors);
-            $(`${ancestor} a`).each((i, elem) => {
-                // Remove any "link-" classes so we don't end up at "link-five" which
-                // takes precedence over the rest
-                const classes = $(elem).attr("class");
-                if (classes) {
-                    $(elem).removeClass(
-                        classes
-                            .split(" ")
-                            .filter((c) => c.indexOf("link-") >= 0),
-                    );
-                }
-
-                $(elem).addClass("link-" + wordsNums[counter % numColors]);
-                counter += 1;
-            });
-        };
-
-        const blockquoteColors = (ancestor = "") => {
-            let counter = Math.floor(Math.random() * numColors);
-            $(`${ancestor} blockquote`).each((i, elem) => {
-                elem.style["border-color"] = `var(--${wordsNums[counter % numColors]
-                    })`;
-                counter += 1;
-            });
-        };
-
-        $(document).ready(() => {
-            const ancestor = "";
-            aColors(ancestor);
-            blockquoteColors(ancestor);
-        });
-    </script>
-
     <!--
         MathJax v3:
         - v3 uses ES6, which most browsers support so I won't polyfill it: https://caniuse.com/es6
