@@ -110,15 +110,13 @@ def live(c, host="localhost", port=8000):
     theme_path = SETTINGS["THEME"]
     watched_globs = [BASE_SETTINGS_FILE, f"{theme_path}/templates/**/*.html"]
 
+    for path in SETTINGS["PLUGIN_PATHS"]:
+        watched_globs.append(f"{path}/**")
+
     content_file_extensions = [".md", ".rst", ".html"]
     for extension in content_file_extensions:
         content_glob = f"{SETTINGS['PATH']}/**/*{extension}"
         watched_globs.append(content_glob)
-
-    static_file_extensions = [".css", ".js"]
-    for extension in static_file_extensions:
-        static_file_glob = f"{theme_path}/static/**/*{extension}"
-        watched_globs.append(static_file_glob)
 
     # Re-run Tailwind generation
     watched_globs.append(SETTINGS["TAILWIND_IN_FILE"])

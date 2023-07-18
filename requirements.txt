@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements.in
 #
+beautifulsoup4==4.12.2
+    # via -r requirements.in
 blinker==1.6.2
     # via pelican
 docutils==0.20.1
@@ -44,6 +46,8 @@ six==1.16.0
     # via
     #   livereload
     #   python-dateutil
+soupsieve==2.4.1
+    # via beautifulsoup4
 tornado==6.3.2
     # via livereload
 unidecode==1.3.6
