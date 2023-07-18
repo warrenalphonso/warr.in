@@ -1,6 +1,9 @@
 """Custom Python-Markdown extensions."""
+import itertools
+
 from markdown.extensions import Extension
 from markdown.inlinepatterns import InlineProcessor
+from markdown.treeprocessors import Treeprocessor
 
 
 class SkipInlinePattern(InlineProcessor):
@@ -49,3 +52,35 @@ class MathJaxExtension(Extension):
             ReplaceInlineMathDelimiters(self.INLINE_RE), f"math-inline", 185
         )
         md.inlinePatterns.register(SkipInlinePattern(self.BLOCK_RE), f"math-block", 185)
+
+
+class ColorizeProcessor(Treeprocessor):
+    COLOR_VARIABLES = itertools.cycle(["zero", "one", "two", "three", "four", "five"])
+
+    def _set_link_style(self, element):
+        for child in element:
+            if child.tag == "a":
+                var = next(self.COLOR_VARIABLES)
+                child.set(
+                    "style",
+                    f"background-image: linear-gradient(to bottom, var(--{var}) 0%, var(--{var}) 100%)",
+                )
+            self._set_link_style(child)
+
+    def _set_blockquote_style(self, element):
+        for child in element:
+            if child.tag == "blockquote":
+                var = next(self.COLOR_VARIABLES)
+                child.set("style", f"border-color: var(--{var})")
+            self._set_blockquote_style(child)
+
+    def run(self, root):
+        self._set_link_style(root)
+        self._set_blockquote_style(root)
+
+
+class ColorizeExtension(Extension):
+    """Loop through colors and assign them to <a> and <blockquote> elements."""
+
+    def extendMarkdown(self, md):
+        md.treeprocessors.register(ColorizeProcessor(md), "colorize", -15)

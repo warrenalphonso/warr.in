@@ -1,5 +1,5 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
-from markdown_extensions import MathJaxExtension
+from markdown_extensions import ColorizeExtension, MathJaxExtension
 
 # Basic settings
 PAGE_PATHS = ["pages"]
@@ -15,6 +15,7 @@ MARKDOWN = {
         "markdown.extensions.extra",
         "markdown.extensions.meta",
         MathJaxExtension(),
+        ColorizeExtension(),
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
