@@ -40,7 +40,7 @@ DIRECT_TEMPLATES = ["archives"]
 # Metadata settings
 # Regex to turn full path into filename without extension
 # The ?P<path_no_ext> is a Python group name, so we can extract it with .group("path_no_ext")
-PATH_METADATA = ".*/(?P<path_no_ext>.*)\..*"
+PATH_METADATA = r".*/(?P<path_no_ext>.*)\..*"
 
 # Feed settings
 # Feed generation is usually not desired when developing

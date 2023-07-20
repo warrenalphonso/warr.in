@@ -24,14 +24,9 @@ SETTINGS.update(
 
 @task
 def tailwind(c):
-    try:
-        c.run("tailwindcss --help", hide="both")
-    except:
-        print("tailwindcss failed")
-        raise
-
-    command = f"tailwindcss -i {SETTINGS['TAILWIND_IN_FILE']} -o {SETTINGS['TAILWIND_OUT_FILE']}"
-    c.run(command)
+    c.run(
+        f"tailwindcss -i {SETTINGS['TAILWIND_IN_FILE']} -o {SETTINGS['TAILWIND_OUT_FILE']}"
+    )
 
 
 @task
