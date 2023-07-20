@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.append(os.curdir)
-from pelicanconf import *
+from pelicanconf import *  # noqa: E402,F401,F403
 
 # Basic settings
 DELETE_OUTPUT_DIRECTORY = False

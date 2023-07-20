@@ -1,9 +1,6 @@
 """Custom Python-Markdown extensions."""
-import itertools
-
 from markdown.extensions import Extension
 from markdown.inlinepatterns import InlineProcessor
-from markdown.treeprocessors import Treeprocessor
 
 
 class SkipInlinePattern(InlineProcessor):
@@ -14,21 +11,21 @@ class SkipInlinePattern(InlineProcessor):
 
 
 class ReplaceInlineMathDelimiters(InlineProcessor):
-    """Extract math expression and replace delimiters with `\(...\)`."""
+    r"""Extract math expression and replace delimiters with `\(...\)`."""
 
     def handleMatch(self, m, _data):
-        return f"\({m.group(1)}\)", m.start(0), m.end(0)
+        return rf"\({m.group(1)}\)", m.start(0), m.end(0)
 
 
 class MathJaxExtension(Extension):
-    """
+    r"""
     Extension to avoid parsing text within math block as MarkDown.
 
     This converts inline math blocks delimiters `$...$` to `\(...\)` because
     dollar signs are pretty commonly used elsewhere.
     """
 
-    """
+    r"""
     Inline math should:
     - be enclosed by `$...$`
     - first or last character in expression shouldn't be whitespace `$ ...$` or
@@ -49,6 +46,6 @@ class MathJaxExtension(Extension):
         # We choose a priority just above 'escape':
         # https://github.com/Python-Markdown/markdown/blob/master/markdown/inlinepatterns.py
         md.inlinePatterns.register(
-            ReplaceInlineMathDelimiters(self.INLINE_RE), f"math-inline", 185
+            ReplaceInlineMathDelimiters(self.INLINE_RE), "math-inline", 185
         )
-        md.inlinePatterns.register(SkipInlinePattern(self.BLOCK_RE), f"math-block", 185)
+        md.inlinePatterns.register(SkipInlinePattern(self.BLOCK_RE), "math-block", 185)
