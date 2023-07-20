@@ -1,5 +1,5 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
-from markdown_extensions import MathJaxExtension
+from markdown_extensions import MathJaxExtension, PriceContextExtension
 
 # Basic settings
 PAGE_PATHS = ["pages"]
@@ -9,13 +9,14 @@ PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["colorize"]
 SITENAME = "warr.in"
 SITEURL = ""
-STATIC_PATHS = ["favicon.ico", "pygment-lovelace.css", "images"]
+STATIC_PATHS = ["favicon.ico", "pygment-lovelace.css", "CPILFESL.csv", "images"]
 MARKDOWN = {
     "extensions": [
         "markdown.extensions.codehilite",  # Syntax highlighting
         "markdown.extensions.extra",
         "markdown.extensions.meta",
         MathJaxExtension(),
+        PriceContextExtension(),
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},

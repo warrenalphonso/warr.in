@@ -108,10 +108,8 @@ def live(c, host="localhost", port=8000):
     for path in SETTINGS["PLUGIN_PATHS"]:
         watched_globs.append(f"{path}/**")
 
-    content_file_extensions = [".md", ".rst", ".html"]
-    for extension in content_file_extensions:
-        content_glob = f"{SETTINGS['PATH']}/**/*{extension}"
-        watched_globs.append(content_glob)
+    # Watch for chagnes in content folder
+    watched_globs.append(f"{SETTINGS['PATH']}/**")
 
     # Re-run Tailwind generation
     watched_globs.append(SETTINGS["TAILWIND_IN_FILE"])

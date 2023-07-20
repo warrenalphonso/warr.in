@@ -1,5 +1,6 @@
 Title: Some Questions I Had About Pharma and Drug Development
 Date: 2023-07-16
+Modified: 2023-07-20
 
 ## Questions around R&D spending
 
@@ -7,7 +8,7 @@ Date: 2023-07-16
   does it vary too much?
     - This is Figure 3 in *Entrepreneur's Guide* which was written in 2001: ![Average drug development costs in time and money by clinical trial]({static}/images/Kolchinsky01-Fig3.png)
         - Have things changed since 2001? Is this even accurate?
-            - [Here's a study for a $2B number, which is cited a *lot*](https://www.sciencedirect.com/science/article/abs/pii/S0167629616000291)
+            - [Here's a study for a $[2:2013]B number, which is cited a *lot*](https://www.sciencedirect.com/science/article/abs/pii/S0167629616000291)
                 - ![Phase 3 hurts]({static}/images/DiMasi16-Table2.png)
             - I need to just [look at the study](https://pubmed.ncbi.nlm.nih.gov/30264133/).
               Seems like drugs for smaller amounts of people have easier testing and
@@ -16,8 +17,8 @@ Date: 2023-07-16
 - What drug types are most expensive and why?
     - [this site](https://www.srgtalent.com/blog/why-are-clinical-trials-of-new-drugs-so-expensive)
       gives costs for different types of drugs. Average cost for clinical trial for
-      one patient is $36,500 (which seems crazy high!). For cancer, it's $60K. For
-      infectious diseases, it's $17K.
+      one patient is $[36.5:2013]K (which seems crazy high!). For cancer, it's $[60:2013]K. For
+      infectious diseases, it's $[17:2013]K.
         - The general cost breakdown is:
             - 20% on "clinical procedures"
             - 20% on "staff"
