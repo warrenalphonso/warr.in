@@ -52,7 +52,30 @@ CLI command to convert the PostCSS input file to a CSS output file, Tailwind wil
 only add styles that our HTML _is actually using_ to the output file. This keeps
 our output file very small!
 
-## Idea Graveyard
+## Design Showcase
+
+### Inflation-adjusted prices
+
+I try to display inflation-adjusted USD prices by using the [Urban Consumer Price
+Index Minus Food and Energy](https://fred.stlouisfed.org/series/CPILFESL).This was
+[inspired by Gwern](https://gwern.net/static/build/Inflation.hs).
+
+Client-side lookup: The inflation calculation is done client-side instead of during
+build because:
+
+- I want the display to be up-to-date even if I don't build the site every year.
+  Performing the calculation client-side means I can look up the current year and
+  just display the original price and original year if my CPI data is outdated.
+- It's slightly more general: building the website periodically to update inflation
+  is assuming that inflation is fairly slow-moving.
+
+Interoperability with Markdown: I've written a Python-Markdown extension to swap
+`$[price:year]` with `<span class="inflation" data-value={price} data-year={year}>${price} in {year}</span>`,
+which the JS snippet can then operate on. The extension contextualizes the price,
+so it's useful even if JS is disabled, my snippet has a bug, or the CPI data is
+oudated.
+
+## Design Graveyard
 
 ### Embed Jupyter Notebooks
 
