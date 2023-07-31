@@ -149,7 +149,7 @@ blockquote {
 }
 
 blockquote p {
-    @apply leading-relaxed text-gray-900 mb-0;
+    @apply leading-relaxed text-gray-900;
 }
 
 .blockquote-zero {
