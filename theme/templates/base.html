@@ -28,47 +28,48 @@
     <script>
         window.addEventListener("DOMContentLoaded", async (event) => {
             const inflationSpans = document.querySelectorAll("span.inflation")
-            if (!inflationSpans) return
-            fetch("/CPILFESL.csv")
-                .then(response => response.text())
-                .then(data => {
-                    // Parse the CSV data
-                    const rows = data.split("\n");
-                    const inflationData = {};
-                    rows.forEach((row, index) => {
-                        if (index > 0 && row) { // Skip the header row and empty rows
-                            const [year, cpi] = row.split(",");
-                            inflationData[year] = parseFloat(cpi);
-                        }
-                    });
+            if (inflationSpans.length) {
+                fetch("/CPILFESL.csv")
+                    .then(response => response.text())
+                    .then(data => {
+                        // Parse the CSV data
+                        const rows = data.split("\n");
+                        const inflationData = {};
+                        rows.forEach((row, index) => {
+                            if (index > 0 && row) { // Skip the header row and empty rows
+                                const [year, cpi] = row.split(",");
+                                inflationData[year] = parseFloat(cpi);
+                            }
+                        });
 
-                    // Calculate inflation-adjusted prices
-                    var currentYear = new Date().getFullYear();
-                    var currentCPI = inflationData[currentYear.toString()];
-                    // If CPI data isn't up-to-date, it's alright to fallback to
-                    // at most 3 years ago
-                    while (!currentCPI && currentYear - 1 >= new Date().getFullYear() - 3) {
-                        currentYear -= 1
-                        currentCPI = inflationData[currentYear.toString()]
-                    }
-                    if (!currentCPI) return
-                    inflationSpans.forEach((elem) => {
-                        const originalPrice = parseFloat(elem.dataset.price);
-                        const originalYear = parseInt(elem.dataset.year);
-                        const originalCPI = inflationData[originalYear.toString()];
-                        if (originalCPI) {
-                            const newPrice = originalPrice * (currentCPI / originalCPI);
-
-                            // <abbr> work pretty well to convery inflation-adjusted
-                            // prices, so I'll use that for now.
-                            const abbr = document.createElement("abbr")
-                            abbr.className = "inflation"
-                            abbr.title = `$${originalPrice} in ${originalYear}`
-                            abbr.textContent = "$" + newPrice.toFixed(2);
-                            elem.parentNode.replaceChild(abbr, elem)
+                        // Calculate inflation-adjusted prices
+                        var currentYear = new Date().getFullYear();
+                        var currentCPI = inflationData[currentYear.toString()];
+                        // If CPI data isn't up-to-date, it's alright to fallback to
+                        // at most 3 years ago
+                        while (!currentCPI && currentYear - 1 >= new Date().getFullYear() - 3) {
+                            currentYear -= 1
+                            currentCPI = inflationData[currentYear.toString()]
                         }
+                        if (!currentCPI) return
+                        inflationSpans.forEach((elem) => {
+                            const originalPrice = parseFloat(elem.dataset.price);
+                            const originalYear = parseInt(elem.dataset.year);
+                            const originalCPI = inflationData[originalYear.toString()];
+                            if (originalCPI) {
+                                const newPrice = originalPrice * (currentCPI / originalCPI);
+
+                                // <abbr> work pretty well to convery inflation-adjusted
+                                // prices, so I'll use that for now.
+                                const abbr = document.createElement("abbr")
+                                abbr.className = "inflation"
+                                abbr.title = `$${originalPrice} in ${originalYear}`
+                                abbr.textContent = "$" + newPrice.toFixed(2);
+                                elem.parentNode.replaceChild(abbr, elem)
+                            }
+                        });
                     });
-                });
+            }
         });
     </script>
 
