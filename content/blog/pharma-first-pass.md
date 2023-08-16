@@ -6,7 +6,7 @@ Modified: 2023-07-20
 
 - Can I neatly split up expected costs per trial period: preclinical, clinical? Or
   does it vary too much?
-    - This is Figure 3 in *Entrepreneur's Guide* which was written in 2001: ![Average drug development costs in time and money by clinical trial]({static}/images/Kolchinsky01-Fig3.png)
+    - This is Figure 3 in *Entrepreneur's Guide to a Biotech Startup* by Kolchinsky which was written in 2001: ![Average drug development costs in time and money by clinical trial]({static}/images/Kolchinsky01-Fig3.png)
         - Have things changed since 2001? Is this even accurate?
             - [Here's a study for a $[2:2013]B number, which is cited a *lot*](https://www.sciencedirect.com/science/article/abs/pii/S0167629616000291)
                 - ![Phase 3 hurts]({static}/images/DiMasi16-Table2.png)
