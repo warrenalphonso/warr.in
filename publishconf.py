@@ -12,3 +12,7 @@ SITEURL = "https://warr.in"
 
 # URL settings
 RELATIVE_URLS = False
+
+# Feed settings
+FEED_DOMAIN = SITEURL
+FEED_ALL_ATOM = "blog/feed.xml"
