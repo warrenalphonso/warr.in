@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* I like cycling through colors! */
-:root {
-    --zero: #cfefaf;
-    --one: #b5dce8;
-    --two: #ffc8b2;
-    --three: #ffe766;
-    --four: #e16f7c;
-    --five: #a2a4e2;
-    --link: #ff9800;
-}
-
 body {
     /* Just barelyyy not white */
     background-color: #fff8f7;
@@ -83,11 +72,6 @@ h6 {
 }
 
 a {
-    background-image: linear-gradient(
-        to bottom,
-        var(--zero) 0%,
-        var(--zero) 100%
-    );
     background-position: 0 100%;
     background-repeat: repeat-x;
     background-size: 4px 2px;
@@ -99,6 +83,50 @@ a {
 
 a:hover {
     background-size: 4px 50px;
+}
+
+blockquote {
+    @apply p-4 my-4 border-l-4 border-gray-300;
+}
+
+blockquote p {
+    @apply leading-relaxed text-gray-900;
+}
+
+ol,
+ul {
+    @apply list-outside pl-4;
+}
+
+p + ul,
+p + ol {
+    /* Apply a negative upper margin to lists that follow a paragraph */
+    @apply -mt-4;
+}
+
+ul {
+    @apply list-disc;
+}
+
+ol {
+    @apply list-decimal;
+}
+
+pre {
+    /* Added to make code blocks horizontally scrollable, but I think it's fine
+       for any pre-formatted text to also scroll. */
+    @apply overflow-x-auto;
+}
+
+/* I like cycling through colors! */
+:root {
+    --zero: #cfefaf;
+    --one: #b5dce8;
+    --two: #ffc8b2;
+    --three: #ffe766;
+    --four: #e16f7c;
+    --five: #a2a4e2;
+    --link: #ff9800;
 }
 
 .link-zero {
@@ -144,14 +172,6 @@ a:hover {
     );
 }
 
-blockquote {
-    @apply p-4 my-4 border-l-4 border-gray-300;
-}
-
-blockquote p {
-    @apply leading-relaxed text-gray-900;
-}
-
 .blockquote-zero {
     border-color: var(--zero);
 }
@@ -169,29 +189,4 @@ blockquote p {
 }
 .blockquote-five {
     border-color: var(--five);
-}
-
-ol,
-ul {
-    @apply list-outside pl-4;
-}
-
-p + ul,
-p + ol {
-    /* Apply a negative upper margin to lists that follow a paragraph */
-    @apply -mt-4;
-}
-
-ul {
-    @apply list-disc;
-}
-
-ol {
-    @apply list-decimal;
-}
-
-pre {
-    /* Added to make code blocks horizontally scrollable, but I think it's fine
-       for any pre-formatted text to also scroll. */
-    @apply overflow-x-auto;
 }
