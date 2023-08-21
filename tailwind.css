@@ -190,3 +190,30 @@ pre {
 .blockquote-five {
     border-color: var(--five);
 }
+
+/* Make <abbr> work on mobile.
+   From: https://bitsofco.de/making-abbr-work-for-touchscreen-keyboard-mouse/ */
+abbr[title] {
+    position: relative;
+
+    /* ensure consistent styling across browsers */
+    text-decoration: underline dotted;
+}
+
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+    content: attr(title);
+
+    /* position tooltip like the native one */
+    position: absolute;
+    left: 0;
+    bottom: -1em;
+    width: auto;
+    white-space: nowrap;
+
+    /* style tooltip */
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+}
