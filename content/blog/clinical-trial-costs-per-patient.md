@@ -1,5 +1,6 @@
 Title: Clinical Trial Costs Per Patient
 Date: 2023-08-15
+Modified: 2023-08-24
 
 After the hard work of creating a candidate drug -- [the initial insights to try out
 a particular compound in some chemical search space, the enormous high-throughput
@@ -73,4 +74,39 @@ for more recent studies before continuing the analysis.
 
 ## Can we tease out any trends about economies of scale?
 
-I'm still thinking about this!
+Berndt14 does some regression analyses to look for relationships between
+cost-per-patient and total number of patients in a trial or total site work effort.
+
+Here I've plotted the regression coefficients for how cost-per-patient (TGPP: total
+grant cost per patient) depends on total number of patients. This is a log-log
+regression: $\ln(\text{TGPP}) = b + a \ln(\text{NPATIENTS})$, where $a$ is the
+regression coefficient being graphed. Notice that for "economies of scale", we'd
+want the regression coefficient to be *negative*: average cost decreases as number
+of patients increases.
+
+(Aside: we're doing a log-log analysis to focus more on
+[elasticity](https://en.wikipedia.org/wiki/Elasticity_of_a_function). If we used
+just $\text{NPATIENTS}$ and $\text{TGPP}$, the analysis would tell us that a
+one-unit increase in former causes an $a$-unit increase in latter. If we use the
+logarithms of both, the analysis instead tells us that a 1 *percent* increase in
+former causes an $a$ *percent* increase in the latter.)
+
+![Economies of Scale]({static}/images/trial-economies-of-scale.png)
+
+This is alarming! Trials in the US have slight economies of scale, but trials in
+the rest of the world have *huge* diseconomies of scale in Phase III and IV. Economies
+of scale are really only relevant in Phase III and IV trials because they have hundreds
+or thousands of patients, while earlier phases have tens of patients.
+
+Here's another regression analysis for how log cost-per-patient varies with site
+work effort. We expepct
+this to be positive: more work probably means each patient is more expensive. (Here
+we're looking at a semi-log analysis: a one-unit increase in SWE causes an $a$ percent
+increase in TGPP.)
+
+![SWE Cost]({static}/images/swe-cost.png)
+
+## Why does the rest of the world have large diseconomies of scale?
+
+I'm still working on this, and I'll spin it out into a separate post! Do email me
+if you have any ideas for how to investigate this.
