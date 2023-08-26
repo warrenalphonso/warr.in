@@ -1,4 +1,4 @@
-Title: hey hey
+Title: Home
 URL: /
 save_as: index.html
 
