@@ -1,8 +1,6 @@
 Title: Sadly, Rent
 Date: 2024-01-23
 
-(Sorry, this isn't well-written! ~~Perfect~~ Good is the enemy of the mediocre.)
-
 Bryne Hobart asks ["How many trillion-dollar companies should there be?"](https://www.thediff.co/archive/how-many-trillion-dollar-companies-should-there-be/#how-many-trillion-dollar-companies-should-there-be)
 Market cap is functionally humanity's best guess at expected total dividends returned to
 shareholders. A company's profits come from its revenue, and its revenue comes
@@ -70,7 +68,7 @@ inefficiency...
 inventions don't seem to come about from immense investment by a few firms; they're
 usually the result of some genius working for very little because he can't help
 himself. [Matt Clancy points out](https://mattsclancy.substack.com/p/how-common-is-independent-discovery)
-that rediscovery is probably pretty common if the idea seems important looking
+that rediscovery is likely if the idea seems important looking
 forward; it's cause areas and ideas that are only important in retrospect that
 aren't likely to be independenly rediscovered. That's good news since even the
 most ambitious companies probably can't justify entirely pie-in-the-sky research.
