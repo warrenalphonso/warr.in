@@ -15,6 +15,7 @@ MARKDOWN = {
         "markdown.extensions.codehilite",  # Syntax highlighting
         "markdown.extensions.extra",
         "markdown.extensions.meta",
+        "pymdownx.tilde",
         MathJaxExtension(),
         PriceContextExtension(),
     ],

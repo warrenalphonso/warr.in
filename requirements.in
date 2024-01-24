@@ -3,3 +3,4 @@ invoke
 livereload
 markdown
 pelican[markdown] == 4.*
+pymdown-extensions
