@@ -5,14 +5,12 @@
 body {
     /* Just barelyyy not white */
     background-color: #fff8f7;
-    /* Define font families */
-    font-family: "Source Code Pro", monospace;
-    font-family: "Source Sans Pro", sans-serif;
+    /* Use a Serif font as default */
     font-family: "Source Serif Pro", serif;
     /* Centered horizontally */
     margin: 0 auto;
     /* nat.org */
-    max-width: 40em;
+    max-width: 35em;
     padding: 1em;
 }
 
@@ -73,6 +71,7 @@ ol {
 }
 
 pre {
+    font-family: "Source Code Pro", monospace;
     /* Added to make code blocks horizontally scrollable, but I think it's fine
        for any pre-formatted text to also scroll. */
     @apply overflow-x-auto;
