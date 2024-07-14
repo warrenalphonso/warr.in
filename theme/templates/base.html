@@ -29,7 +29,7 @@
         window.addEventListener("DOMContentLoaded", async (event) => {
             const inflationSpans = document.querySelectorAll("span.inflation")
             if (inflationSpans.length) {
-                fetch("/CPILFESL.csv")
+                fetch("/uploads/CPILFESL.csv")
                     .then(response => response.text())
                     .then(data => {
                         // Parse the CSV data
