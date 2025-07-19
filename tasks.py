@@ -14,19 +14,7 @@ BASE_SETTINGS_FILE = "pelicanconf.py"
 PUBLISH_SETTINGS_FILE = "publishconf.py"
 
 SETTINGS = {**DEFAULT_CONFIG, **get_settings_from_file(BASE_SETTINGS_FILE)}
-SETTINGS.update(
-    {
-        "TAILWIND_IN_FILE": "tailwind.css",
-        "TAILWIND_OUT_FILE": f"{SETTINGS['OUTPUT_PATH']}/out.css",
-    }
-)
 
-
-@task
-def tailwind(c):
-    c.run(
-        f"tailwindcss -i {SETTINGS['TAILWIND_IN_FILE']} -o {SETTINGS['TAILWIND_OUT_FILE']}"
-    )
 
 
 @task
@@ -40,21 +28,18 @@ def clean(c):
 @task
 def build(c):
     """Build local version of site"""
-    tailwind(c)
     pelican_run(f"-s {BASE_SETTINGS_FILE}")
 
 
 @task
 def rebuild(c):
     """`build` with the delete switch"""
-    tailwind(c)
     pelican_run(f"-d -s {BASE_SETTINGS_FILE}")
 
 
 @task
 def regenerate(c):
     """Automatically regenerate site upon file modification"""
-    tailwind(c)
     pelican_run(f"-r -s {BASE_SETTINGS_FILE}")
 
 
@@ -91,7 +76,6 @@ def reserve(c):
 @task
 def preview(c):
     """Build production version of site."""
-    tailwind(c)
     pelican_run(f"-s {PUBLISH_SETTINGS_FILE}")
 
 
@@ -111,8 +95,8 @@ def live(c, host="localhost", port=8000):
     # Watch for chagnes in content folder
     watched_globs.append(f"{SETTINGS['PATH']}/**")
 
-    # Re-run Tailwind generation
-    watched_globs.append(SETTINGS["TAILWIND_IN_FILE"])
+    # Watch CSS changes
+    watched_globs.append("styles.css")
 
     for glob in watched_globs:
         server.watch(glob, lambda: build(c))

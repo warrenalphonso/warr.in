@@ -1,0 +1,179 @@
+body {
+    /* Just barelyyy not white */
+    background-color: #fff8f7;
+    font-family: "Source Serif 4", serif;
+    /* Centered horizontally */
+    margin: 0 auto;
+    max-width: 43em;
+    padding: 1.5em;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+}
+
+ol,
+ul {
+    list-style-position: outside;
+    padding-left: 1rem;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+pre {
+    font-family: "Source Code Pro", monospace;
+    overflow-x: auto;
+}
+
+/* Color variables */
+:root {
+    --zero: #cfefaf;
+    --one: #b5dce8;
+    --two: #ffc8b2;
+    --three: #ffe766;
+    --four: #e16f7c;
+    --five: #a2a4e2;
+    --link: #ff9800;
+}
+
+/* Link styles */
+.link-zero {
+    background-image: linear-gradient(to bottom, var(--zero) 0%, var(--zero) 100%);
+}
+
+.link-one {
+    background-image: linear-gradient(to bottom, var(--one) 0%, var(--one) 100%);
+}
+
+.link-two {
+    background-image: linear-gradient(to bottom, var(--two) 0%, var(--two) 100%);
+}
+
+.link-three {
+    background-image: linear-gradient(to bottom, var(--three) 0%, var(--three) 100%);
+}
+
+.link-four {
+    background-image: linear-gradient(to bottom, var(--four) 0%, var(--four) 100%);
+}
+
+.link-five {
+    background-image: linear-gradient(to bottom, var(--five) 0%, var(--five) 100%);
+}
+
+/* Blockquote colors */
+.blockquote-zero {
+    border-color: var(--zero);
+}
+
+.blockquote-one {
+    border-color: var(--one);
+}
+
+.blockquote-two {
+    border-color: var(--two);
+}
+
+.blockquote-three {
+    border-color: var(--three);
+}
+
+.blockquote-four {
+    border-color: var(--four);
+}
+
+.blockquote-five {
+    border-color: var(--five);
+}
+
+a {
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 2px;
+    color: #000;
+    text-decoration: none;
+    transition: background-size 0.6s;
+    padding: 0 0.25rem;
+}
+
+a:hover {
+    background-size: 4px 50px;
+}
+
+blockquote {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid #d1d5db;
+}
+
+blockquote p {
+    line-height: 1.625;
+    color: #111827;
+}
+
+/* Abbreviation tooltip */
+abbr[title] {
+    position: relative;
+    text-decoration: underline dotted;
+}
+
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    bottom: -1em;
+    width: auto;
+    white-space: nowrap;
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+}

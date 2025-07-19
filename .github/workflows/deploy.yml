@@ -33,12 +33,6 @@ jobs:
                   cache: "pip"
             - name: Install Python requirements
               run: python -m pip install -r requirements.txt
-            - name: Install TailwindCSS CLI
-              uses: supplypike/setup-bin@v3
-              with:
-                  uri: "https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.2/tailwindcss-linux-x64"
-                  name: "tailwindcss"
-                  version: "v3.3.2"
             - name: Build site
               run: inv preview
             - name: Upload artifact
