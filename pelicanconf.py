@@ -9,7 +9,7 @@ PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["colorize"]
 SITENAME = "warr.in"
 SITEURL = ""
-STATIC_PATHS = ["favicon.ico", "pygment-lovelace.css", "images", "uploads"]
+STATIC_PATHS = ["favicon.ico", "styles.css", "pygment-lovelace.css", "images", "uploads"]
 MARKDOWN = {
     "extensions": [
         "markdown.extensions.codehilite",  # Syntax highlighting
