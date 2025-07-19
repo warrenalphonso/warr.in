@@ -157,23 +157,3 @@ blockquote p {
     line-height: 1.625;
     color: #111827;
 }
-
-/* Abbreviation tooltip */
-abbr[title] {
-    position: relative;
-    text-decoration: underline dotted;
-}
-
-abbr[title]:hover::after,
-abbr[title]:focus::after {
-    content: attr(title);
-    position: absolute;
-    left: 0;
-    bottom: -1em;
-    width: auto;
-    white-space: nowrap;
-    background-color: #1e1e1e;
-    color: #fff;
-    border-radius: 3px;
-    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
-}
