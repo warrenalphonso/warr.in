@@ -1,5 +1,5 @@
 # Base settings file: https://docs.getpelican.com/en/latest/settings.html
-from markdown_extensions import MathJaxExtension, PriceContextExtension
+from markdown_extensions import MathJaxExtension
 
 # Basic settings
 PAGE_PATHS = ["pages"]
@@ -17,7 +17,6 @@ MARKDOWN = {
         "markdown.extensions.meta",
         "pymdownx.tilde",
         MathJaxExtension(),
-        PriceContextExtension(),
     ],
     "extension_configs": {
         "markdown.extensions.codehilite": {"css_class": "highlight"},

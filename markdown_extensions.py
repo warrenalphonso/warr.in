@@ -1,6 +1,4 @@
 """Custom Python-Markdown extensions."""
-from xml.etree.ElementTree import Element
-
 from markdown.extensions import Extension
 from markdown.inlinepatterns import InlineProcessor
 
@@ -51,28 +49,3 @@ class MathJaxExtension(Extension):
             ReplaceInlineMathDelimiters(self.INLINE_RE), "math-inline", 185
         )
         md.inlinePatterns.register(SkipInlinePattern(self.BLOCK_RE), "math-block", 185)
-
-
-class PriceContextProcessor(InlineProcessor):
-    def handleMatch(self, m, data):
-        price, year = m.group(1), m.group(2)
-        el = Element("span")
-        el.text = "${0} in {1}".format(price, year)
-        el.set("class", "inflation")
-        el.set("data-price", price)
-        el.set("data-year", year)
-        return el, m.start(0), m.end(0)
-
-
-class PriceContextExtension(Extension):
-    """
-    Parse `$[price:year]` as
-    `<span class="inflation" data-price="{price}" data-year="{year}">${price} in {year}</span>`.
-    """
-
-    PRICE_YEAR_RE = r"\$\[([\d\.]+):(\d{4})\]"  # $[price:year]
-
-    def extendMarkdown(self, md):
-        md.inlinePatterns.register(
-            PriceContextProcessor(self.PRICE_YEAR_RE, md), "price-year", 185
-        )
