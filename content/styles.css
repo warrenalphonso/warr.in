@@ -72,6 +72,15 @@ pre {
     overflow-x: auto;
 }
 
+img {
+    /* Cap at 800px or container width */
+    max-width: min(100%, 800px);
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Color variables */
 :root {
     --zero: #cfefaf;
